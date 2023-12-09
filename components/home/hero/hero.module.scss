@@ -1,0 +1,346 @@
+@import '@/styles/variables.scss';
+
+.section {
+	position: relative;
+	width: 90%;
+	height: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	z-index: 5;
+}
+
+.section .logo {
+	position: relative;
+	width: 90px;
+	height: auto;
+	margin-top: 24px;
+}
+
+.section .topLeft {
+	position: relative;
+	top: 35%;
+	translate: 0 -50%;
+}
+
+.section .topLeft .title {
+	position: relative;
+	width: auto;
+
+	color: $color-white;
+	font-family: 'GRIFTER';
+	font-size: 150px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: 7.5px;
+	text-transform: uppercase;
+}
+
+.section .topLeft .title .shadow1 {
+	position: absolute;
+	width: 392px;
+	height: auto;
+
+	left: 280px;
+	top: 50px;
+
+	transform: rotate(-35deg);
+
+	pointer-events: none;
+}
+
+.section .topLeft .title .shadow2 {
+	position: absolute;
+	width: 392px;
+	height: auto;
+
+	left: 230px;
+	top: -50px;
+
+	transform: rotate(115deg);
+
+	pointer-events: none;
+}
+
+.section .topLeft .buttons {
+	position: relative;
+	margin-top: 30px;
+
+	display: flex;
+	gap: 8px;
+}
+
+.section .topLeft .buttons .shadow1 {
+	position: absolute;
+	width: 392px;
+	height: auto;
+
+	left: 110px;
+	top: -120px;
+
+	transform: rotate(20deg);
+
+	pointer-events: none;
+}
+
+.section .topLeft .buttons .longBtn {
+	position: relative;
+	display: flex;
+	gap: 24px;
+
+	padding: 0px 24px;
+	height: 48px;
+
+	border-radius: 0px;
+	background: $color-white;
+
+	transition: background $animation-primary;
+}
+
+.section .topLeft .buttons .longBtn:hover {
+	background: rgba($color-white, 0.8);
+}
+
+.section .topLeft .buttons .longBtn p {
+	position: relative;
+	color: $color-black;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.section .topLeft .buttons .longBtn img {
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+
+.section .topLeft .buttons .socialBtn {
+	position: relative;
+	width: 48px;
+	min-width: 48px;
+	height: 48px;
+
+	border-radius: 0px;
+	background: $color-white;
+	transition: background $animation-primary;
+}
+
+.section .topLeft .buttons .socialBtn:hover {
+	background: rgba($color-white, 0.8);
+}
+
+.section .topLeft .buttons .socialBtn img {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.section .scroll {
+	position: absolute;
+	bottom: 48px;
+	left: 50%;
+
+	width: 113px;
+	height: 113px;
+}
+
+.section .scroll:hover {
+	cursor: pointer;
+}
+
+.section .scroll span {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+
+	transition: all $animation-primary;
+}
+
+.section .scroll:hover .arrow {
+	top: 5px;
+}
+
+.section .scroll .text {
+	animation: rotateAnim 15s linear infinite;
+}
+
+@keyframes rotateAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.section .topRightSlide {
+	position: absolute;
+	right: 0px;
+	top: 200px;
+	//width: 542px;
+	height: 266px;
+
+	animation: topRightSlideAnim 3s ease 1;
+	overflow: hidden;
+}
+
+@keyframes topRightSlideAnim {
+	0% {
+		width: 0px;
+		right: 542px;
+	}
+
+	100% {
+		width: 542px;
+		right: 0px;
+	}
+}
+
+.section .topRightSlide .topRightSlideInside {
+	position: relative;
+	width: 542px;
+	height: 266px;
+}
+
+.section .topRightSlide .topRightSlideInside .bgImg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.section .topRightSlide .topRightSlideInside .square {
+	position: absolute;
+	right: 9px;
+	top: 9px;
+
+	padding: 24px;
+
+	width: 240px;
+	height: 240px;
+}
+
+.section .square .title {
+	position: absolute;
+	bottom: 62px;
+
+	color: $color-white;
+	font-family: 'GRIFTER';
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+}
+
+.section .square .bottomBtn {
+	position: absolute;
+	bottom: 24px;
+
+	display: flex;
+	gap: 12px;
+
+	margin-top: 12px;
+
+	padding: 0px 12px;
+	height: 32px;
+
+	border-radius: 0px;
+	background: $color-white;
+
+	transition: background $animation-primary;
+}
+
+.section .square .bottomBtn:hover {
+	background: rgba($color-white, 0.8);
+}
+
+.section .square .bottomBtn p {
+	position: relative;
+	color: $color-black;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.section .square .bottomBtn img {
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+
+.section .bottomLeftSlide {
+	position: absolute;
+	left: 0px;
+	bottom: 50px;
+	//width: 497px;
+	height: 258px;
+
+	animation: bottomLeftSlideAnim 3s ease 1;
+	overflow: hidden;
+
+	transform: rotate(180deg);
+}
+
+@keyframes bottomLeftSlideAnim {
+	0% {
+		width: 0px;
+		left: 497px;
+	}
+
+	20% {
+		width: 0px;
+		left: 497px;
+	}
+
+	100% {
+		width: 497px;
+		left: 0px;
+	}
+}
+
+.section .bottomLeftSlide .bottomLeftSlideInside {
+	position: relative;
+	width: 497px;
+	height: 258px;
+
+	transform: rotate(-180deg);
+}
+
+.section .bottomLeftSlide .bottomLeftSlideInside .bgImg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.section .bottomLeftSlide .bottomLeftSlideInside .square {
+	position: absolute;
+	left: 9px;
+	top: 9px;
+
+	padding: 24px;
+
+	width: 240px;
+	height: 240px;
+}
+
+// RWD
+@media (max-width: 1500px) {
+	.section .topRightSlide {
+		right: 20px;
+		top: 100px;
+	}
+}

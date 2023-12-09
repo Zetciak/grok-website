@@ -1,0 +1,96 @@
+@import './variables.scss';
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: $color-background-primary;
+	overflow: hidden;
+}
+
+.base {
+	background: $color-background-primary;
+	color: $color-text-primary;
+	font-family: $font-primary;
+
+	min-width: 100vw;
+}
+
+a {
+	text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.image {
+	position: relative;
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+}
+
+.imageCover {
+	position: relative;
+	object-fit: cover;
+	width: 100%;
+	height: auto;
+}
+
+.toast {
+	font-family: $font-primary;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+:root {
+	--toastify-color-success: #75ff4b;
+	--toastify-color-error: #ff6363;
+	--toastify-color-info: #61a0ff;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 65654px;
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(25px);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 65654px;
+	background-color: $color-scroll;
+}
+
+::selection {
+	color: #fff;
+	background: rgba($color-scroll, 0.6);
+}
+
+img::selection {
+	background: #ffffff00;
+}
+
+// RWD
+@media (max-width: 1110px) {
+}
