@@ -4,6 +4,7 @@
 	position: relative;
 	width: 90%;
 	height: 100%;
+	max-height: 100vh;
 	max-width: 1280px;
 	margin: 0 auto;
 
@@ -146,6 +147,8 @@
 	position: absolute;
 	bottom: 48px;
 	left: 50%;
+
+	translate: -50% 0;
 
 	width: 113px;
 	height: 113px;
@@ -342,5 +345,82 @@
 	.section .topRightSlide {
 		right: 20px;
 		top: 100px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.section .topRightSlide {
+		top: 300px;
+	}
+}
+
+@media (max-width: 1150px) {
+	.section .bottomLeftSlide {
+		display: none;
+	}
+}
+
+@media (max-width: 930px) {
+	.section .topRightSlide {
+		display: none;
+	}
+
+	.section .topLeft .title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.section .topLeft .title .shadow1 {
+		left: 0px;
+		bottom: -800px;
+		transform: rotate(35deg);
+	}
+
+	.section .topLeft .title .shadow2 {
+		display: none;
+	}
+
+	.section .topLeft .buttons {
+		justify-content: center;
+	}
+
+	.section .topLeft .buttons .shadow1 {
+		left: 210px;
+		top: -90px;
+
+		transform: rotate(37deg);
+	}
+}
+
+@media (max-width: 550px) {
+	.section .topLeft {
+		position: relative;
+		top: 40%;
+		translate: 0 -50%;
+	}
+
+	.section .topLeft .title {
+		font-size: 115px;
+	}
+
+	.section .topLeft .title .shadow1 {
+		bottom: -300px;
+	}
+
+	.section .scroll {
+		bottom: 48px;
+
+		width: 90px;
+		height: 90px;
+	}
+}
+
+@media (max-width: 395px) {
+	.section .topLeft .title {
+		font-size: 105px;
+	}
+
+	.section .topLeft .title .shadow1 {
+		bottom: -250px;
 	}
 }

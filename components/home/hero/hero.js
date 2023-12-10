@@ -13,9 +13,10 @@ import scrollArrow from '@/public/scrollArrow.svg';
 import scrollText from '@/public/scrollText.svg';
 import hero_topRight from '@/public/hero_topRight.png';
 import hero_bottomLeft from '@/public/hero_bottomLeft.png';
+import { Parallax } from 'react-scroll-parallax';
 
 // >> Script
-function Hero() {
+function Hero(props) {
 	return (
 		<div className={styles.section}>
 			<div
@@ -31,94 +32,105 @@ function Hero() {
 					className="image"
 				/>
 			</div>
+
 			<div className={styles.topLeft}>
-				<Typography
-					className={styles.title}
-					data-aos="fade-right"
-					data-aos-duration="2500"
-				>
-					SAFE
-					<br />
-					GROK
-					<span className={styles.shadow1}>
-						<Image
-							src={titleShadow}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</span>
-					<span className={styles.shadow2}>
-						<Image
-							src={titleShadow}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</span>
-				</Typography>
-				<div
-					className={styles.buttons}
-					data-aos="fade-up"
-					data-aos-duration="2500"
-				>
-					<Button
-						className={styles.longBtn}
-						href="https://google.com"
-						target="_blank"
-						disableRipple
+				<Parallax translateY={[50, -50]}>
+					<Typography
+						className={styles.title}
+						data-aos="fade-right"
+						data-aos-duration="2500"
 					>
-						<Typography>PRESALE</Typography>
-						<Image
-							src={triangle}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</Button>
-					<Button
-						className={styles.socialBtn}
-						href="https://google.com"
-						target="_blank"
-						disableRipple
+						SAFE
+						<br />
+						GROK
+						<span className={styles.shadow1}>
+							<Image
+								src={titleShadow}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</span>
+						<span className={styles.shadow2}>
+							<Image
+								src={titleShadow}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</span>
+					</Typography>
+					<div
+						className={styles.buttons}
+						data-aos="fade-up"
+						data-aos-duration="2500"
 					>
-						<Image
-							src={twitter}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</Button>
-					<Button
-						className={styles.socialBtn}
-						href="https://google.com"
-						target="_blank"
-						disableRipple
-					>
-						<Image
-							src={telegram}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</Button>
-					<span className={styles.shadow1}>
-						<Image
-							src={titleShadow}
-							alt=""
-							quality={99}
-							priority={true}
-							className="image"
-						/>
-					</span>
-				</div>
+						<Button
+							className={styles.longBtn}
+							href="https://google.com"
+							target="_blank"
+							disableRipple
+						>
+							<Typography>PRESALE</Typography>
+							<Image
+								src={triangle}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</Button>
+						<Button
+							className={styles.socialBtn}
+							href="https://google.com"
+							target="_blank"
+							disableRipple
+						>
+							<Image
+								src={twitter}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</Button>
+						<Button
+							className={styles.socialBtn}
+							href="https://google.com"
+							target="_blank"
+							disableRipple
+						>
+							<Image
+								src={telegram}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</Button>
+						<span className={styles.shadow1}>
+							<Image
+								src={titleShadow}
+								alt=""
+								quality={99}
+								priority={true}
+								className="image"
+							/>
+						</span>
+					</div>
+				</Parallax>
 			</div>
-			<div className={styles.scroll}>
+			<div
+				className={styles.scroll}
+				onClick={() => {
+					const htmlElement = document.getElementById('AI');
+					if (htmlElement) {
+						htmlElement.scrollIntoView();
+					}
+				}}
+			>
 				<span className={styles.text}>
 					<Image
 						src={scrollText}

@@ -1,0 +1,203 @@
+@import '@/styles/variables.scss';
+
+.section {
+	position: relative;
+	width: 100%;
+	z-index: 4;
+	padding-top: 120px;
+	padding-bottom: 60px;
+}
+
+.section::after {
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 77px;
+	width: 100%;
+	height: 100%;
+
+	background: $color-white;
+
+	z-index: -1;
+
+	pointer-events: none;
+}
+
+.press .title {
+	position: relative;
+	width: 90%;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	text-align: center;
+	color: $color-black2;
+	font-family: 'GRIFTER';
+	font-size: 56px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: 2.8px;
+	text-transform: uppercase;
+}
+
+.press .pressOutside {
+	position: relative;
+	width: 100%;
+	margin-top: 56px;
+	height: 40px;
+}
+
+.press .pressOutside .pressInside {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	translate: -50% 0;
+
+	display: flex;
+	gap: 50px;
+}
+
+.press .pressOutside .pressInside .list {
+	position: relative;
+	display: flex;
+	gap: 50px;
+}
+
+.press .pressOutside .pressInside .list .onePress {
+	opacity: 0.7;
+	transition: opacity $animation-primary;
+	img {
+		position: relative;
+		width: auto;
+		top: 0px;
+		transition: top $animation-primary;
+	}
+}
+
+.press .pressOutside .pressInside .list .onePress:hover {
+	opacity: 1;
+	img {
+		top: -10px;
+	}
+}
+
+.inside {
+	position: relative;
+	width: 90%;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.inside .community {
+	position: relative;
+	width: 100%;
+}
+
+.inside .community .oneSocial {
+	position: relative;
+	width: 100%;
+	margin-top: 80px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.inside .community .oneSocial .left {
+	position: relative;
+	display: flex;
+
+	img {
+		position: relative;
+		width: 72px;
+		height: 72px;
+
+		margin-left: -20px;
+	}
+
+	p {
+		position: relative;
+		margin-top: 12px;
+		color: $color-black2;
+		font-family: 'GRIFTER';
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+	}
+}
+
+.inside .community .oneSocial .rightBtn {
+	position: relative;
+	display: flex;
+	gap: 8px;
+	width: 190px;
+	height: 48px;
+
+	margin-top: 12px;
+
+	border-radius: 0px;
+	background: $color-black2;
+
+	transition: background $animation-primary;
+}
+
+.inside .community .oneSocial .rightBtn:hover {
+	background: rgba($color-black2, 0.8);
+}
+
+.inside .community .oneSocial .rightBtn p {
+	position: relative;
+	color: $color-white;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.inside .community .oneSocial .rightBtn img {
+	position: relative;
+	width: 16px;
+	height: 16px;
+
+	filter: $color-white-filter;
+}
+
+// RWD
+@media (max-width: 750px) {
+	.inside .community {
+		margin-top: 40px;
+	}
+
+	.inside .community .oneSocial {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		margin-top: 40px;
+	}
+
+	.inside .community .oneSocial .left {
+		width: 100%;
+		justify-content: center;
+
+		p {
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.press .title {
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 400px) {
+	.press .title {
+		font-size: 46px;
+	}
+}

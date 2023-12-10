@@ -1,0 +1,237 @@
+@import '@/styles/variables.scss';
+
+.section {
+	position: relative;
+	width: 100%;
+	z-index: 5;
+
+	top: 30px;
+}
+
+.section::after {
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 77px;
+	width: 100%;
+	height: 100%;
+
+	background: $color-white;
+
+	z-index: -1;
+
+	pointer-events: none;
+}
+
+.section::before {
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 77px;
+
+	z-index: 6;
+
+	background: url('../../../public/whiteScratch2.png');
+	background-size: auto 100%;
+	background-position: top center;
+
+	pointer-events: none;
+}
+
+.inside {
+	position: relative;
+	width: 90%;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	padding-top: 160px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.inside .bg1 {
+	position: absolute;
+	right: -250px;
+	top: 350px;
+	width: 222px;
+	height: auto;
+
+	pointer-events: none;
+
+	opacity: 0.2;
+}
+
+.inside .bg2 {
+	position: absolute;
+	right: 100px;
+	top: -105px;
+	width: 222px;
+	height: auto;
+
+	pointer-events: none;
+	transform: rotate(90deg);
+
+	opacity: 0.2;
+
+	z-index: 7;
+}
+
+.inside .bg3 {
+	position: absolute;
+	left: -270px;
+	top: 420px;
+	width: 222px;
+	height: auto;
+
+	pointer-events: none;
+	transform: rotate(180deg);
+
+	opacity: 0.2;
+
+	z-index: 7;
+}
+
+.inside .left {
+	position: relative;
+	width: 510px;
+	height: auto;
+}
+
+.inside .right {
+	position: relative;
+	width: 460px;
+	min-width: 470px;
+}
+
+.inside .right .title {
+	position: relative;
+
+	color: $color-black2;
+	font-family: 'GRIFTER';
+	font-size: 56px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: 2.8px;
+	text-transform: uppercase;
+}
+
+.inside .right .desc {
+	position: relative;
+	margin-top: 24px;
+
+	text-align: justify;
+	color: rgba($color-black2, 0.5);
+	font-family: $font-primary;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+.inside .right .list {
+	position: relative;
+	width: 100%;
+	margin-top: 24px;
+
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	row-gap: 30px;
+}
+
+.inside .right .list .point {
+	position: relative;
+	width: calc(50% - 10px);
+
+	display: flex;
+	gap: 16px;
+}
+
+.inside .right .list .point .square {
+	position: relative;
+	width: 24px;
+	min-width: 24px;
+	height: 24px;
+	border-radius: 2px;
+	transform: rotate(-45deg);
+}
+
+.inside .right .list .point p {
+	position: relative;
+	margin-top: 3px;
+
+	color: $color-black2;
+	font-family: $font-secondary;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+// RWD
+@media (max-width: 1200px) {
+	.inside {
+		flex-wrap: wrap;
+	}
+
+	.inside .right {
+		width: 100%;
+		order: 1;
+	}
+
+	.inside .left {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+		order: 2;
+
+		margin-top: 60px;
+	}
+}
+
+@media (max-width: 550px) {
+	.inside .right {
+		min-width: 0px;
+	}
+
+	.inside .right .list {
+		row-gap: 14px;
+		justify-content: center;
+	}
+
+	.inside .right .list .point {
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.inside .right .list .point p {
+		width: 100%;
+		text-align: center;
+	}
+
+	.inside .right .title {
+		font-size: 52px;
+	}
+
+	.inside .right .desc {
+		margin-top: 18px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 425px) {
+	.inside .right .title {
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 400px) {
+	.inside .right .title {
+		font-size: 46px;
+	}
+}

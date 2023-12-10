@@ -11,22 +11,21 @@
 .page .heroBg {
 	position: relative;
 	width: 100%;
-	height: 100vh;
-	min-height: 100vh;
+	height: calc(100vh + 77px);
 	//height: 963px;
 	//max-height: 100vh;
 
-	background: url('../../public/heroBg.png');
+	background: url('../../public/heroBg2.png');
 	background-size: cover;
 	background-position: top center;
 	overflow: hidden;
 
-	z-index: 3;
+	z-index: 5;
 }
 
 // RWD
-@media (max-width: 1050px) {
-	.page .heroBg {
-		height: auto;
-	}
-}
+// @media (max-width: 1050px) {
+// 	.page .heroBg {
+// 		height: auto;
+// 	}
+// }
