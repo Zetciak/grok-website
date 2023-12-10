@@ -5,15 +5,15 @@
 	width: 100%;
 	margin: 0 auto;
 
-	min-height: 100vh;
+	min-height: 100dvh;
 }
 
 .page .heroBg {
 	position: relative;
 	width: 100%;
-	height: calc(100vh + 77px);
+	height: calc(100dvh + 77px);
 	//height: 963px;
-	//max-height: 100vh;
+	//max-height: 100dvh;
 
 	background: url('../../public/heroBg2.png');
 	background-size: cover;

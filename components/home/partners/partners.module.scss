@@ -160,6 +160,12 @@
 	}
 }
 
+@media (max-width: 430px) {
+	.section .list .onePartner {
+		width: 50%;
+	}
+}
+
 @media (max-width: 400px) {
 	.inside .topInfos .title {
 		font-size: 46px;

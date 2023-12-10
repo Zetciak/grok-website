@@ -3,6 +3,7 @@ import styles from './press.module.scss';
 import { Button, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 import triangle from '@/public/icons/triangle.svg';
 import twitter from '@/public/icons/twitter.svg';
@@ -50,13 +51,15 @@ const list = [
 
 // >> Script
 function Press(props) {
+	const size = useWindowSize();
+
 	return (
 		<div className={styles.section} id="Presale Released">
 			<div className={styles.press}>
 				<Typography className={styles.title}>
 					Presale Released
 				</Typography>
-				<Parallax translateX={[-5, 5]}>
+				<Parallax translateX={size.width > 430 ? [-5, 5] : [-15, 15]}>
 					<div className={styles.pressOutside}>
 						<div className={styles.pressInside}>
 							<div className={styles.list}>
