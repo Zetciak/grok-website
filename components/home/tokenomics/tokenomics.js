@@ -49,7 +49,7 @@ function Tokenomics(props) {
 						className="image"
 					/>
 				</div>
-				<div className={styles.left}>
+				<div className={styles.left} data-aos="fade-right">
 					<Image
 						src={tokenomics}
 						alt=""
@@ -59,9 +59,11 @@ function Tokenomics(props) {
 					/>
 				</div>
 				<div className={styles.right}>
-					<Typography className={styles.title}>Tokenomics</Typography>
+					<Typography className={styles.title} data-aos="fade-up">
+						Tokenomics
+					</Typography>
 
-					<Typography className={styles.desc}>
+					<Typography className={styles.desc} data-aos="fade-up">
 						Tokenomics was designed by us in such a way as to
 						guarantee the project&apos;s stable development,
 						listings on the best CEXs, and thus reaching a wider
@@ -71,7 +73,11 @@ function Tokenomics(props) {
 					<div className={styles.list}>
 						{list.map((element, index) => {
 							return (
-								<div className={styles.point} key={index}>
+								<div
+									className={styles.point}
+									key={index}
+									data-aos="fade-up"
+								>
 									<div
 										className={styles.square}
 										style={{

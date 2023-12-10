@@ -82,15 +82,15 @@ function Partners(props) {
 					/>
 				</div>
 				<div className={styles.topInfos}>
-					<Typography className={styles.title}>
+					<Typography className={styles.title} data-aos="fade-right">
 						Our partners
 					</Typography>
-					<Typography className={styles.desc}>
+					<Typography className={styles.desc} data-aos="fade-left">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 						sed do eiusmod tempor incididunt.
 					</Typography>
 				</div>
-				<div className={styles.list}>
+				<div className={styles.list} data-aos="fade-up">
 					{list.map((element, index) => {
 						return (
 							<div className={styles.onePartner} key={index}>

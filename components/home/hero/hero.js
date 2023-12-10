@@ -130,6 +130,8 @@ function Hero(props) {
 						htmlElement.scrollIntoView();
 					}
 				}}
+				data-aos="fade-up"
+				data-aos-duration="1500"
 			>
 				<span className={styles.text}>
 					<Image

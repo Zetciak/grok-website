@@ -57,7 +57,7 @@ function Roadmap(props) {
 		<div className={styles.section} id="Roadmap">
 			<div className={styles.inside}>
 				<div className={styles.corners}>
-					<div className={styles.leftCorner}>
+					<div className={styles.leftCorner} data-aos="fade">
 						<Image
 							src={roadmapCorners}
 							alt=""
@@ -66,7 +66,7 @@ function Roadmap(props) {
 							className="image"
 						/>
 					</div>
-					<div className={styles.rightCorner}>
+					<div className={styles.rightCorner} data-aos="fade">
 						<Image
 							src={roadmapCorners}
 							alt=""
@@ -86,7 +86,11 @@ function Roadmap(props) {
 					/>
 				</div>
 				<div className={styles.phases}>
-					<div className={styles.onePhase} data-value="phase1">
+					<div
+						className={styles.onePhase}
+						data-value="phase1"
+						data-aos="fade-up"
+					>
 						<div className={styles.phaseTitle}>
 							<Typography>PHASE 1</Typography>
 						</div>
@@ -99,7 +103,11 @@ function Roadmap(props) {
 							);
 						})}
 					</div>
-					<div className={styles.onePhase} data-value="phase2">
+					<div
+						className={styles.onePhase}
+						data-value="phase2"
+						data-aos="fade-up"
+					>
 						<div className={styles.phaseTitle}>
 							<Typography>PHASE 2</Typography>
 						</div>
@@ -112,7 +120,11 @@ function Roadmap(props) {
 							);
 						})}
 					</div>
-					<div className={styles.onePhase} data-value="phase3">
+					<div
+						className={styles.onePhase}
+						data-value="phase3"
+						data-aos="fade-up"
+					>
 						<div className={styles.phaseTitle}>
 							<Typography>PHASE 3</Typography>
 						</div>
@@ -125,7 +137,11 @@ function Roadmap(props) {
 							);
 						})}
 					</div>
-					<div className={styles.onePhase} data-value="phase4">
+					<div
+						className={styles.onePhase}
+						data-value="phase4"
+						data-aos="fade-up"
+					>
 						<div className={styles.phaseTitle}>
 							<Typography>PHASE 4</Typography>
 						</div>

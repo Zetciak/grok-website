@@ -56,10 +56,10 @@ function Press(props) {
 	return (
 		<div className={styles.section} id="Presale Released">
 			<div className={styles.press}>
-				<Typography className={styles.title}>
+				<Typography className={styles.title} data-aos="fade-up">
 					Presale Released
 				</Typography>
-				<Parallax translateX={size.width > 430 ? [-5, 5] : [-15, 15]}>
+				<Parallax translateX={size.width > 430 ? [-5, 5] : [-25, 25]}>
 					<div className={styles.pressOutside}>
 						<div className={styles.pressInside}>
 							<div className={styles.list}>
@@ -137,7 +137,7 @@ function Press(props) {
 			</div>
 			<div className={styles.inside}>
 				<div className={styles.community}>
-					<div className={styles.oneSocial}>
+					<div className={styles.oneSocial} data-aos="fade-up">
 						<div className={styles.left}>
 							<Image
 								src={telegram}
@@ -164,7 +164,7 @@ function Press(props) {
 							/>
 						</Button>
 					</div>
-					<div className={styles.oneSocial}>
+					<div className={styles.oneSocial} data-aos="fade-up">
 						<div className={styles.left}>
 							<Image
 								src={twitter}

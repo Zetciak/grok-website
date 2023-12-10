@@ -36,13 +36,13 @@ function AiAnalysis(props) {
 				<Typography className={styles.safe}>SAF</Typography>
 				<Typography className={styles.groku}>GROK</Typography>
 
-				<Typography className={styles.desc}>
+				<Typography className={styles.desc} data-aos="fade-up">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Id volutpat lacus laoreet non curabitur. Ut etiam
 					sit amet nisl purus in.
 				</Typography>
-				<div className={styles.centerImg}>
+				<div className={styles.centerImg} data-aos="fade-up">
 					<Image
 						src={aiImg}
 						alt=""
@@ -60,7 +60,9 @@ function AiAnalysis(props) {
 						/>
 					</div>
 				</div>
-				<Typography className={styles.title}>Ai analysis</Typography>
+				<Typography className={styles.title} data-aos="fade-right">
+					Ai analysis
+				</Typography>
 			</div>
 		</div>
 	);

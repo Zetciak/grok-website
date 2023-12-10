@@ -12,7 +12,7 @@ function Footer(props) {
 		<div className={styles.section} id="Footer">
 			<div className={styles.inside}>
 				<div className={styles.leftInfos}>
-					<div className={styles.logo}>
+					<div className={styles.logo} data-aos="fade-right">
 						<Image
 							src={logo}
 							alt=""
@@ -21,15 +21,22 @@ function Footer(props) {
 							className="image"
 						/>
 					</div>
-					<Typography className={styles.desc}>
+					<Typography className={styles.desc} data-aos="fade-right">
 						Watch the video to know how the space Chain ecosystem
 						will break through
 					</Typography>
-					<Typography className={styles.copyright}>
+					<Typography
+						className={styles.copyright}
+						data-aos="fade-right"
+					>
 						Copyright © 2023 SAFE-GROK Inc. All Rights Reserved
 					</Typography>
 				</div>
-				<div className={styles.oneTable} data-value="bot">
+				<div
+					className={styles.oneTable}
+					data-value="bot"
+					data-aos="fade-up"
+				>
 					<Typography className={styles.tableTitle}>
 						Bot Features
 					</Typography>
@@ -48,7 +55,11 @@ function Footer(props) {
 						</a>
 					</div>
 				</div>
-				<div className={styles.oneTable} data-value="social">
+				<div
+					className={styles.oneTable}
+					data-value="social"
+					data-aos="fade-up"
+				>
 					<Typography className={styles.tableTitle}>
 						Social Media
 					</Typography>
@@ -69,6 +80,7 @@ function Footer(props) {
 						quality={99}
 						priority={true}
 						className="image"
+						data-aos="fade-up"
 					/>
 				</div>
 			</div>
