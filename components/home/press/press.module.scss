@@ -196,7 +196,13 @@
 	}
 
 	.press .pressOutside .pressInside .list {
-		gap: 12px;
+		gap: 24px;
+	}
+
+	.press .pressOutside .pressInside .list .onePress {
+		img {
+			width: 100px;
+		}
 	}
 }
 

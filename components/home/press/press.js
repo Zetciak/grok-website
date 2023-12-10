@@ -59,7 +59,7 @@ function Press(props) {
 				<Typography className={styles.title} data-aos="fade-up">
 					Presale Released
 				</Typography>
-				<Parallax translateX={size.width > 430 ? [-5, 5] : [-25, 25]}>
+				<Parallax translateX={size.width > 430 ? [-5, 5] : [-50, 50]}>
 					<div className={styles.pressOutside}>
 						<div className={styles.pressInside}>
 							<div className={styles.list}>

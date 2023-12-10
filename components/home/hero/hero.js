@@ -3,6 +3,8 @@ import styles from './hero.module.scss';
 
 import { Button, Typography } from '@mui/material';
 import Image from 'next/image';
+import { Parallax } from 'react-scroll-parallax';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 import triangle from '@/public/icons/triangle.svg';
 import twitter from '@/public/icons/twitter.svg';
@@ -13,10 +15,11 @@ import scrollArrow from '@/public/scrollArrow.svg';
 import scrollText from '@/public/scrollText.svg';
 import hero_topRight from '@/public/hero_topRight.png';
 import hero_bottomLeft from '@/public/hero_bottomLeft.png';
-import { Parallax } from 'react-scroll-parallax';
 
 // >> Script
 function Hero(props) {
+	const size = useWindowSize();
+
 	return (
 		<div className={styles.section}>
 			<div
@@ -130,7 +133,7 @@ function Hero(props) {
 						htmlElement.scrollIntoView();
 					}
 				}}
-				data-aos="fade-up"
+				data-aos={size.width > 430 ? 'fade-up' : ''}
 				data-aos-duration="1500"
 			>
 				<span className={styles.text}>
