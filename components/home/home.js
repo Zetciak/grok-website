@@ -3,6 +3,7 @@ import styles from './home.module.scss';
 import { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { Triangle } from 'react-loader-spinner';
+import { Parallax } from 'react-scroll-parallax';
 
 import Hero from './hero/hero';
 import AiAnalysis from './aiAnalysis/aiAnalysis';
@@ -16,6 +17,8 @@ import Footer from './footer/footer';
 function Home() {
 	const [robotLoaded, setRobotLoaded] = useState(null);
 	const [openPage, setOpenPage] = useState(false);
+
+	const [splineVisible, setSplineVisible] = useState(true);
 
 	useEffect(() => {
 		if (robotLoaded === 'loaded') {
@@ -37,20 +40,41 @@ function Home() {
 
 	return (
 		<div className={styles.page}>
-			<div className={styles.loader} data-visible={robotLoaded}>
-				<div className={styles.triangle}>
-					<Triangle color="#adff00" width="100%" />
+			<Parallax
+				onProgressChange={(progress) => {
+					if (progress >= 1) {
+						if (splineVisible === true) {
+							setSplineVisible(false);
+						}
+					} else {
+						if (splineVisible === false) {
+							setSplineVisible(true);
+						}
+					}
+				}}
+			>
+				<div className={styles.loader} data-visible={robotLoaded}>
+					<div className={styles.triangle}>
+						<Triangle color="#adff00" width="100%" />
+					</div>
 				</div>
-			</div>
-			<div className={styles.heroBg}>
-				<div className={styles.spline}>
-					<Spline
-						scene="https://prod.spline.design/C9DHi814Ir7f4e0H/scene.splinecode"
-						onLoad={onLoad}
-					/>
+
+				<div className={styles.heroBg}>
+					<div
+						className={styles.spline}
+						style={
+							splineVisible === true ? {} : { display: 'none' }
+						}
+					>
+						<Spline
+							scene="https://prod.spline.design/C9DHi814Ir7f4e0H/scene.splinecode"
+							onLoad={onLoad}
+						/>
+					</div>
+
+					{openPage === true ? <Hero /> : null}
 				</div>
-				{openPage === true ? <Hero /> : null}
-			</div>
+			</Parallax>
 			<AiAnalysis />
 			<Roadmap />
 			<Tokenomics />
