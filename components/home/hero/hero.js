@@ -10,7 +10,7 @@ import triangle from '@/public/icons/triangle.svg';
 import twitter from '@/public/icons/twitter.svg';
 import telegram from '@/public/icons/telegram.svg';
 import titleShadow from '@/public/titleShadow.png';
-import logo from '@/public/logo.png';
+import logo from '@/public/logo.svg';
 import scrollArrow from '@/public/scrollArrow.svg';
 import scrollText from '@/public/scrollText.svg';
 import hero_topRight from '@/public/hero_topRight.png';

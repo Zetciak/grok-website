@@ -3,7 +3,7 @@ import styles from './footer.module.scss';
 import { Typography } from '@mui/material';
 import Image from 'next/image';
 
-import logo from '@/public/logo.png';
+import logo from '@/public/logo.svg';
 import footerShape from '@/public/footerShape.png';
 
 // >> Script
