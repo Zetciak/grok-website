@@ -114,6 +114,7 @@
 	position: relative;
 	padding-top: 70px;
 	width: 100%;
+	height: 200px;
 	padding-left: calc(100% - 475px); // 470px = width of container
 
 	text-align: justify;
@@ -123,6 +124,27 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: 170%;
+}
+
+.inside .desc span {
+	position: absolute;
+	padding-top: 70px;
+
+	width: 100%;
+	height: 100%;
+	padding-left: calc(100% - 475px);
+
+	left: 100%;
+	top: 0px;
+	opacity: 0;
+
+	transition: all $animation-primary;
+}
+
+.inside .desc span[data-selected='true'] {
+	position: absolute;
+	left: 0%;
+	opacity: 1;
 }
 
 .inside .aiBgLeft {
@@ -158,6 +180,24 @@
 	margin-top: 110px;
 }
 
+.inside .centerImg span {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	scale: 0;
+
+	transition: all $animation-primary;
+}
+
+.inside .centerImg span[data-selected='true'] {
+	position: relative;
+	opacity: 1;
+	scale: 1;
+}
+
 .inside .centerImg .line {
 	position: absolute;
 
@@ -169,6 +209,7 @@
 
 .inside .title {
 	position: relative;
+	margin-top: 30px;
 	max-width: 900px;
 
 	color: $color-black2;
@@ -181,8 +222,58 @@
 	text-transform: uppercase;
 }
 
-// RWD
+.inside .title span {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	scale: 0;
 
+	transition: all $animation-primary;
+}
+
+.inside .title span[data-selected='true'] {
+	position: relative;
+	opacity: 1;
+	scale: 1;
+}
+
+.inside .selectDots {
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	translate: 0 -50%;
+	width: 16px;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	z-index: 5;
+}
+
+.inside .selectDots .dot {
+	position: relative;
+	width: 16px;
+	height: 16px;
+
+	background: rgba($color-black2, 0.25);
+
+	border-radius: 100%;
+
+	transition: background $animation-primary;
+}
+
+.inside .selectDots .dot:hover {
+	background: rgba($color-black2, 0.7);
+	cursor: pointer;
+}
+
+.inside .selectDots .dot[data-selected='true'] {
+	background: rgba($color-black2, 1);
+}
+
+// RWD
 @media (max-width: 1390px) {
 	.inside .bottomPhases {
 		display: none;
@@ -193,6 +284,8 @@
 	.inside {
 		display: flex;
 		flex-wrap: wrap;
+
+		padding-bottom: 50px;
 	}
 
 	.inside .centerImg .line {
@@ -210,6 +303,10 @@
 		font-size: 85px;
 	}
 
+	.inside .title span {
+		padding-top: 50px;
+	}
+
 	.inside .desc {
 		position: relative;
 		order: 2;
@@ -222,13 +319,38 @@
 		text-align: center;
 	}
 
+	.inside .desc span {
+		padding-top: 25px;
+		padding-left: 0px;
+
+		left: 0px;
+		top: 100%;
+	}
+
+	.inside .desc span[data-selected='true'] {
+		left: 0px;
+		top: 0%;
+	}
+
 	.inside .centerImg {
 		order: 3;
 
 		width: 100%;
 		max-width: 483px;
 		margin: 0 auto;
-		margin-top: 60px;
+		margin-top: 0px;
+	}
+
+	.inside .selectDots {
+		position: absolute;
+		right: auto;
+		left: 0px;
+		top: auto;
+		bottom: -20px;
+		translate: none;
+		width: 100%;
+
+		justify-content: center;
 	}
 }
 
@@ -247,7 +369,7 @@
 		width: 100%;
 		max-width: 483px;
 		margin: 0 auto;
-		margin-top: 60px;
+		margin-top: 0px;
 	}
 
 	.inside .safe {
