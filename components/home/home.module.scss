@@ -15,12 +15,25 @@
 	//height: 963px;
 	//max-height: 100dvh;
 
-	background: url('../../public/heroBg2.png');
-	background-size: cover;
-	background-position: top center;
+	// background: url('../../public/heroBg2.png');
+	// background-size: cover;
+	// background-position: top center;
 	overflow: hidden;
 
 	z-index: 5;
+}
+
+.page .heroBg .spline {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	width: 100%;
+	height: auto;
+
+	z-index: -1;
+
+	// scale: 1.5;
 }
 
 // RWD
