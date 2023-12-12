@@ -199,12 +199,12 @@
 	}
 
 	.inside .right .list {
-		row-gap: 14px;
+		row-gap: 32px;
 		justify-content: center;
 	}
 
 	.inside .right .list .point {
-		width: 100%;
+		//width: 100%;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
@@ -212,6 +212,7 @@
 	.inside .right .list .point p {
 		width: 100%;
 		text-align: center;
+		margin-top: -4px;
 	}
 
 	.inside .right .title {

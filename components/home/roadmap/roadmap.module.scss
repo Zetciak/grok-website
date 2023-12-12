@@ -62,6 +62,23 @@
 	top: 0px;
 	width: 44px;
 	height: 240px;
+
+	transition: opacity $animation-primary;
+}
+
+.inside .corners span {
+	display: none;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	width: 12px;
+	height: 12px;
+
+	filter: $color-white-filter;
+
+	transform: rotate(180deg);
 }
 
 .inside .corners .rightCorner {
@@ -72,6 +89,8 @@
 	height: 240px;
 
 	transform: scaleX(-1);
+
+	transition: opacity $animation-primary;
 }
 
 .inside .topShadow {
@@ -267,5 +286,57 @@
 	.inside .phases .onePhase {
 		width: 100%;
 		max-width: 400px;
+	}
+
+	.inside .corners {
+		display: block;
+	}
+
+	.inside .corners span {
+		display: block;
+	}
+
+	.inside .phases .onePhase {
+		position: absolute;
+		left: -150%;
+		opacity: 0;
+
+		transition: all $animation-third;
+	}
+
+	.inside .phases .onePhase[data-selected='true'] {
+		position: relative;
+		left: 0%;
+		opacity: 1;
+	}
+
+	.inside .corners .leftCorner:hover {
+		opacity: 0.7;
+		cursor: pointer;
+	}
+
+	.inside .corners .rightCorner:hover {
+		opacity: 0.7;
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 530px) {
+	.inside .phases .onePhase {
+		width: 80%;
+		margin: 0 auto;
+		max-width: 400px;
+	}
+
+	.inside .corners {
+		z-index: 10;
+	}
+
+	.inside .corners .leftCorner {
+		left: -7px;
+	}
+
+	.inside .corners .rightCorner {
+		right: -7px;
 	}
 }

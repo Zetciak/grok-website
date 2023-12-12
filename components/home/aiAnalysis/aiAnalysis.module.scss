@@ -138,7 +138,7 @@
 	top: 0px;
 	opacity: 0;
 
-	transition: all $animation-primary;
+	transition: all $animation-secondary;
 }
 
 .inside .desc span[data-selected='true'] {
@@ -187,9 +187,9 @@
 	left: 0px;
 	top: 0px;
 	opacity: 0;
-	scale: 0;
+	scale: 0.5;
 
-	transition: all $animation-primary;
+	transition: all $animation-third;
 }
 
 .inside .centerImg span[data-selected='true'] {
@@ -227,9 +227,9 @@
 	left: 0px;
 	top: 0px;
 	opacity: 0;
-	scale: 0;
+	scale: 0.5;
 
-	transition: all $animation-primary;
+	transition: all $animation-third;
 }
 
 .inside .title span[data-selected='true'] {
