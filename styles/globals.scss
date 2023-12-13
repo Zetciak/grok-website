@@ -18,6 +18,17 @@ body {
 	overflow-x: hidden;
 }
 
+@media (max-width: 1340px) {
+	html,
+	body {
+		overflow: hidden;
+	}
+
+	body {
+		overflow: hidden;
+	}
+}
+
 .base {
 	background: $color-background-primary;
 	color: $color-text-primary;
