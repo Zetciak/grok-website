@@ -40,6 +40,12 @@ function Home() {
 
 	return (
 		<div className={styles.page}>
+			<div className={styles.loader} data-visible={robotLoaded}>
+				<div className={styles.triangle}>
+					<Triangle color="#adff00" width="100%" />
+				</div>
+			</div>
+
 			<Parallax
 				onProgressChange={(progress) => {
 					if (progress >= 1) {
@@ -52,13 +58,8 @@ function Home() {
 						}
 					}
 				}}
+				className={styles.parallax}
 			>
-				<div className={styles.loader} data-visible={robotLoaded}>
-					<div className={styles.triangle}>
-						<Triangle color="#adff00" width="100%" />
-					</div>
-				</div>
-
 				<div className={styles.heroBg}>
 					<div
 						className={styles.spline}
@@ -79,6 +80,7 @@ function Home() {
 			<Roadmap />
 			<Tokenomics />
 			<Press />
+
 			<Partners />
 			<Footer />
 		</div>

@@ -5,7 +5,7 @@
 	width: 100%;
 	z-index: 5;
 
-	top: 0px;
+	top: -77px;
 	padding-bottom: 20px;
 }
 
@@ -13,7 +13,7 @@
 	position: absolute;
 	content: '';
 	left: 0px;
-	top: 0px;
+	top: 77px;
 	width: 100%;
 	height: 100%;
 
@@ -28,7 +28,7 @@
 	position: absolute;
 	content: '';
 	left: 0px;
-	top: -77px;
+	top: 0px;
 	width: 100%;
 	height: 77px;
 
@@ -42,22 +42,17 @@
 }
 
 .inside {
-	position: sticky;
+	position: relative;
 	width: 90%;
-	height: 100vh;
 	max-width: 1280px;
 	margin: 0 auto;
 
 	top: 77px;
 }
 
-.inside .flex {
-	display: flex;
-}
-
 .inside .safe {
 	position: absolute;
-	top: 200px;
+	top: 150px;
 	left: 0px;
 
 	color: $color-white;
@@ -115,14 +110,6 @@
 	pointer-events: none;
 }
 
-.inside .oneCard {
-	position: relative;
-	min-width: 100%;
-	height: 100vh;
-
-	top: -130px;
-}
-
 .inside .desc {
 	position: relative;
 	padding-top: 70px;
@@ -137,6 +124,27 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: 170%;
+}
+
+.inside .desc span {
+	position: absolute;
+	padding-top: 70px;
+
+	width: 100%;
+	height: 100%;
+	padding-left: calc(100% - 475px);
+
+	left: 100%;
+	top: 0px;
+	opacity: 0;
+
+	transition: all $animation-secondary;
+}
+
+.inside .desc span[data-selected='true'] {
+	position: absolute;
+	left: 0%;
+	opacity: 1;
 }
 
 .inside .aiBgLeft {
@@ -172,6 +180,24 @@
 	margin-top: 110px;
 }
 
+.inside .centerImg span {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	scale: 0.5;
+
+	transition: all $animation-third;
+}
+
+.inside .centerImg span[data-selected='true'] {
+	position: relative;
+	opacity: 1;
+	scale: 1;
+}
+
 .inside .centerImg .line {
 	position: absolute;
 
@@ -196,31 +222,70 @@
 	text-transform: uppercase;
 }
 
-// RWD
+.inside .title span {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	scale: 0.5;
 
-@media (max-width: 1500px) {
-	.inside .title {
-		margin-top: 0px;
+	transition: all $animation-third;
+}
+
+.inside .title span[data-selected='true'] {
+	position: relative;
+	opacity: 1;
+	scale: 1;
+}
+
+.inside .selectDots {
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	translate: 0 -50%;
+	width: 16px;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	z-index: 5;
+}
+
+.inside .selectDots .dot {
+	position: relative;
+	width: 16px;
+	height: 16px;
+
+	background: rgba($color-black2, 0.25);
+
+	border-radius: 100%;
+
+	transition: background $animation-primary;
+}
+
+.inside .selectDots .dot:hover {
+	background: rgba($color-black2, 0.7);
+	cursor: pointer;
+}
+
+.inside .selectDots .dot[data-selected='true'] {
+	background: rgba($color-black2, 1);
+}
+
+// RWD
+@media (max-width: 1390px) {
+	.inside .bottomPhases {
+		display: none;
 	}
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 900px) {
 	.inside {
-		height: auto;
-		padding-bottom: 50px;
-	}
-
-	.inside .oneCard {
-		height: auto;
-		top: auto;
-		margin-top: 100px;
-
 		display: flex;
 		flex-wrap: wrap;
-	}
 
-	.inside .flex {
-		flex-wrap: wrap;
+		padding-bottom: 50px;
 	}
 
 	.inside .centerImg .line {
@@ -233,10 +298,13 @@
 		padding-top: 50px;
 
 		width: 100%;
-		max-width: 100%;
 		text-align: center;
 
 		font-size: 85px;
+	}
+
+	.inside .title span {
+		padding-top: 50px;
 	}
 
 	.inside .desc {
@@ -251,33 +319,44 @@
 		text-align: center;
 	}
 
+	.inside .desc span {
+		padding-top: 25px;
+		padding-left: 0px;
+
+		left: 0px;
+		top: 100%;
+	}
+
+	.inside .desc span[data-selected='true'] {
+		left: 0px;
+		top: 0%;
+	}
+
 	.inside .centerImg {
 		order: 3;
 
 		width: 100%;
-		max-width: 530px;
+		max-width: 483px;
 		margin: 0 auto;
 		margin-top: 0px;
+	}
+
+	.inside .selectDots {
+		position: absolute;
+		right: auto;
+		left: 0px;
+		top: auto;
+		bottom: -20px;
+		translate: none;
+		width: 100%;
+
+		justify-content: center;
 	}
 }
 
 @media (max-width: 600px) {
-	.section {
-		padding-bottom: 0px;
-	}
-
-	.inside {
-		padding-bottom: 0px;
-	}
-
-	.inside .oneCard {
-		margin-top: 50px;
-	}
-
 	.inside .title {
 		font-size: 64px;
-
-		padding-top: 0px;
 	}
 
 	.inside .desc {

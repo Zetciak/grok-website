@@ -17,7 +17,7 @@
 
 	background: $color-background-primary;
 
-	z-index: 10;
+	z-index: 13;
 
 	transition: opacity $animation-secondary;
 }
@@ -48,7 +48,7 @@
 	background-position: center center;
 	overflow: hidden;
 
-	z-index: 5;
+	z-index: 8;
 }
 
 .page .heroBg .spline {
@@ -62,6 +62,11 @@
 	z-index: -1;
 
 	scale: 1.43;
+}
+
+.parallax {
+	position: relative;
+	z-index: 5;
 }
 
 // RWD

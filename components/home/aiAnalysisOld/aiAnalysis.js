@@ -2,9 +2,7 @@
 import styles from './aiAnalysis.module.scss';
 import { Typography } from '@mui/material';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useWindowSize } from '@/hooks/useWindowSize';
+import { useState } from 'react';
 
 import aiImg from '@/public/aiImg.png';
 import analysisImg from '@/public/analysisImg.png';
@@ -42,23 +40,11 @@ const points = [
 
 // >> Script
 function AiAnalysis(props) {
-	const targetRef = useRef(null);
-
-	const size = useWindowSize();
-
-	const { scrollYProgress } = useScroll({ target: targetRef });
-
-	const x = useTransform(scrollYProgress, [0, 1], ['0%', '-310%']);
+	const [selectedPoint, setSelectedPoint] = useState(points[0]);
+	const [selectedPointNumber, setSelectedPointNumber] = useState(1);
 
 	return (
-		<div
-			className={styles.section}
-			id="AI"
-			style={
-				size.width > 1350 ? { height: `${points.length * 100}vh` } : {}
-			}
-			ref={targetRef}
-		>
+		<div className={styles.section} id="AI">
 			<div className={styles.inside}>
 				<div className={styles.aiBgLeft}>
 					<Image
@@ -83,42 +69,90 @@ function AiAnalysis(props) {
 				<Typography className={styles.safe}>SAF</Typography>
 				<Typography className={styles.groku}>GROK</Typography>
 
-				<motion.div
-					className={styles.flex}
-					style={size.width > 1350 ? { x } : {}}
-				>
+				<Typography className={styles.desc} data-aos="fade-up">
 					{points.map((element, index) => {
 						return (
-							<div className={styles.oneCard} key={index}>
-								<Typography className={styles.desc}>
-									{element.text}
-								</Typography>
-								<div className={styles.centerImg}>
-									<Image
-										src={element.image}
-										alt=""
-										quality={99}
-										priority={true}
-										className="image"
-									/>
-
-									<div className={styles.line}>
-										<Image
-											src={aiImgLine}
-											alt=""
-											quality={99}
-											priority={true}
-											className="image"
-										/>
-									</div>
-								</div>
-								<Typography className={styles.title}>
-									{element.title}
-								</Typography>
-							</div>
+							<span
+								data-selected={
+									selectedPointNumber === index + 1
+										? true
+										: false
+								}
+								key={index}
+							>
+								{element.text}
+							</span>
 						);
 					})}
-				</motion.div>
+				</Typography>
+				<div className={styles.centerImg} data-aos="fade-up">
+					{points.map((element, index) => {
+						return (
+							<span
+								data-selected={
+									selectedPointNumber === index + 1
+										? true
+										: false
+								}
+								key={index}
+							>
+								<Image
+									src={element.image}
+									alt=""
+									quality={99}
+									priority={true}
+									className="image"
+								/>
+							</span>
+						);
+					})}
+
+					<div className={styles.line}>
+						<Image
+							src={aiImgLine}
+							alt=""
+							quality={99}
+							priority={true}
+							className="image"
+						/>
+					</div>
+				</div>
+				<Typography className={styles.title} data-aos="fade-right">
+					{points.map((element, index) => {
+						return (
+							<span
+								data-selected={
+									selectedPointNumber === index + 1
+										? true
+										: false
+								}
+								key={index}
+							>
+								{element.title}
+							</span>
+						);
+					})}
+				</Typography>
+
+				<div className={styles.selectDots}>
+					{points.map((element, index) => {
+						return (
+							<div
+								className={styles.dot}
+								data-selected={
+									selectedPointNumber === index + 1
+										? true
+										: false
+								}
+								key={index}
+								onClick={() => {
+									setSelectedPointNumber(index + 1);
+									setSelectedPoint(element);
+								}}
+							></div>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
